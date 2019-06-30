@@ -1,13 +1,11 @@
 <template>
-    
+  <h1>asdf</h1>
 </template>
 
 <script>
-export default {
-    
-}
+export default {};
 </script>
 
-<style lang="stylus" scoped>
-
+<style lang="sass" scoped>
+@import "./src/styles/components/header.sass"
 </style>
