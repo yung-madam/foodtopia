@@ -15,11 +15,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Routes
-const restaurantRoutes = require('./routes/restaurant');
-const dishRoutes = require('./routes/dish');
-app.use('/api', restaurantRoutes);
-app.use('/api', dishRoutes);
-
+app.use('/api', require('./routes'));
 
 var MyModel = mongoose.model('prdelka', new mongoose.Schema({}));
 
