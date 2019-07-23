@@ -9,5 +9,10 @@ module.exports = {
                 "sass-loader" // compiles Sass to CSS, using Node Sass by default
             ]
         }]
-    }
+    };
+    const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
+
+    exports.plugins.push(
+        new VuetifyLoaderPlugin()
+    )
 };
