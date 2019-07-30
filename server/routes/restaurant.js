@@ -9,8 +9,7 @@ const Restaurant = require('../model/restaurant');
  * GET /api/restaurants
  */
 router.get('/restaurants', (req, res, next) => {
-    console.log(restaurantSchema);
-    const restaurants = Restaurant.find({name: "neco"});
+    const restaurants = Restaurant.find();
     res.send(restaurants);
 });
 

@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 
-const Dish = require('./dish');
-
 const restaurantSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -10,7 +8,7 @@ const restaurantSchema = new mongoose.Schema({
   stars: Number,
   comment: String,
   address: String,
-  dishes: [Dish]
+  dishes: [{type: mongoose.Schema.Types.ObjectId, ref: 'Dish'}]
 });
 
-exports = mongoose.model('prdelka', restaurantSchema);
+module.exports = mongoose.model('Restaurants', restaurantSchema);

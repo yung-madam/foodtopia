@@ -10,6 +10,4 @@ const dishSchema = new mongoose.Schema({
   price: String
 });
 
-const Dish = mongoose.model('Dish', dishSchema);
-
-exports = Dish;
+module.exports = mongoose.model('Dishes', dishSchema);
