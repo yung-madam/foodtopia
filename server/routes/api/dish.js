@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 // Internal dependencies
-const Dish = require('../model/dish');
+const Dish = require('../../model/dish');
 
 /**
  * GET /api/dishes

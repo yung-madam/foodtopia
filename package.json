@@ -6,16 +6,23 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "dev": "nodemon server/index.js"
+    "dev": "nodemon server/server.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
     "core-js": "^2.6.5",
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "express": "^4.17.1",
+    "express-jwt": "^5.3.1",
+    "express-session": "^1.16.2",
+    "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.2.7",
     "mongoose": "^5.6.6",
     "node-sass": "^4.12.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
     "vue": "^2.6.10"
   },
   "devDependencies": {
