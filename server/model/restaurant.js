@@ -1,16 +1,17 @@
 const mongoose = require('mongoose');
 
-const Dish = require('./dish');
-
 const restaurantSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-  },
-  stars: Number,
-  comment: String,
-  address: String,
-  dishes: [Dish]
+  name: { type: String, required: true, maxlength: 150 },
+  address: { type: String, maxlength: 100 },
+  stars: { type: Number, min: 0, max: 5 },
+  comment: { type: String, maxlength: 250 },
+  dishes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Dish' }]
 });
 
-exports = mongoose.model('prdelka', restaurantSchema);
+restaurantSchema.methods.addDish = (dish) => {
+    this.dishes.push(dish);
+    this.save();
+    return this;
+};
+
+module.exports = mongoose.model('Restaurants', restaurantSchema);

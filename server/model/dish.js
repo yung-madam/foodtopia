@@ -1,15 +1,11 @@
 const mongoose = require('mongoose');
 
 const dishSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-  },
-  stars: Number,
-  comment: String,
-  price: String
+  name: { type: String, required: true, maxlength: 100 },
+  stars: { type: Number, min: 0, max: 5 },
+  comment: { type: String, maxlength: 250 },
+  price: { type: Number, min: 0 },
+  restaurant: { type: mongoose.Schema.Types.ObjectId, ref: 'Restaurant' }
 });
 
-const Dish = mongoose.model('Dish', dishSchema);
-
-exports = Dish;
+module.exports = mongoose.model('Dishes', dishSchema);
